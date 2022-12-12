@@ -1,0 +1,98 @@
+/* * {
+     box-sizing: border-box;
+     
+   } */
+   body {
+     margin: 25px;
+     border-left: 5px solid;
+     color: lightgray;
+     padding-left: 15%;
+     min-height: 100%;
+
+     
+   }
+   h1 {
+     font-family:  sans-serif;
+     color: rgb(218,64,64);
+     font-weight: lighter;
+   }
+   h2 {
+     font-family:  sans-serif;
+     color: rgba(15,14,15);
+     font-weight: lighter;
+     
+   }
+   h4 {
+     font-size: 20px;
+     font-family:  sans-serif;
+     color: rgba(15,14,15,0.7);
+     font-weight: lighter;
+
+   }
+   nav {
+     display: flex;
+     height: 50px;
+     flex-direction: row;
+     justify-content: flex-start;
+     color: rgba(169,169,169,0.8);
+     
+}
+.navs {
+
+     text-decoration: underline;
+     display: flex;
+     height: 50px;
+     flex-direction: row;
+     justify-content: flex-start;
+     color: rgba(169,169,169,0.8);
+}
+
+
+   div {
+     font-size: 11px;
+     color: rgb(169,169,169);
+     margin: 10px auto;
+
+   }
+   nav > div:last-child {
+     margin-left: auto;
+     color:greenyellow;
+   }
+   nav > div:first-child {
+     color:greenyellow;
+   }
+
+ p::first-letter{
+     font-size: 60px;
+
+ }
+
+p {
+     font-family:  sans-serif;
+     font-weight: lighter;
+     width: 78%;
+     
+}
+
+
+ h5 {
+     color:red;
+     border-bottom: 2px solid lightgrey;
+     text-align: right;
+     padding-right: 15px;
+     width: 77%;
+     padding-bottom: 15px;
+
+
+ }
+ li {
+    text-decoration: underline;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: rgba(169,169,169,0.8);
+ }
+ .copyWrite {
+  color: black;
+ }
