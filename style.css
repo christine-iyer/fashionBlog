@@ -37,7 +37,7 @@
      color: rgba(169,169,169,0.8);
      
 }
-.navs {
+/* .navs {
 
      text-decoration: underline;
      display: flex;
@@ -45,7 +45,7 @@
      flex-direction: row;
      justify-content: flex-start;
      color: rgba(169,169,169,0.8);
-}
+} */
 
 
    div {
@@ -92,6 +92,15 @@ p {
     flex-direction: row;
     justify-content: flex-start;
     color: rgba(169,169,169,0.8);
+ }
+ ul {
+  text-decoration: underline;
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: rgba(169,169,169,0.8);
+
  }
  .copyWrite {
   color: black;
