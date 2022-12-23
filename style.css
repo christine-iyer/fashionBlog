@@ -81,27 +81,44 @@ p {
      text-align: right;
      padding-right: 15px;
      width: 77%;
-     padding-bottom: 15px;
+     padding-bottom: 15px; 
+
 
 
  }
  li {
-    text-decoration: underline;
-    display: flex;
-    height: 50px;
-    flex-direction: row;
-    justify-content: flex-start;
-    color: rgba(169,169,169,0.8);
+  text-decoration: none;
+  height: 30px;
+  display: inline-block;
+  flex-direction: row;
+  color: rgba(169,169,169,0.8);
+  padding: 25%;
+
  }
  ul {
-  text-decoration: underline;
+  text-decoration: none;
   display: flex;
   height: 50px;
   flex-direction: row;
-  justify-content: flex-start;
+
   color: rgba(169,169,169,0.8);
+
 
  }
  .copyWrite {
   color: black;
  }
+ header {
+  padding-bottom: 55px;
+ }
+ 
+
+
+
+
+
+nav li{
+  display: flex;
+  list-style: none;
+  display: inline-block;
+}

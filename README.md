@@ -1,5 +1,7 @@
 # Fashion Blog 
 
+![Wireframe](./images/blog.png)
+
 [Fashion Blog](https://sfs-flex-evelyn.herokuapp.com/react/week-19/day-3/hw)
 
 ![](./images/blog-image-1.jpeg)
@@ -125,3 +127,182 @@ In the github readme for your React Application - Remove all the React boilerpla
 [Github pages Live Link](https://sfs-flex-evelyn.herokuapp.com/react/week-19/day-3/hw)
 
 [Github link of html version](https://sfs-flex-evelyn.herokuapp.com/react/week-19/day-3/hw)
+
+## For the react app, here are some code snippets to reuse in components.
+
+<details>
+     <summary>Nav.js</summary>
+
+```js
+export default function Nav(props) {
+	return (
+
+                    <nav class= "navs"aria-label="Main Navigation" role="navigation">
+          <ul>
+            <li class="headerLink"><a href="/">Women's</a></li>
+            <li class="headerLink"><a href="/">Men's</a></li>
+            <li class="headerLink"><a href="/">On the Street</a></li>
+            <li class="headerLink"><a href="/">TheCatwalk</a></li>
+            <li class="headerLink"><a href="/">AdWatch</a></li>
+            <li class="headerLink"><a href="/">About</a></li>
+          </ul>
+        </nav>
+
+               );
+          }
+```
+</details>
+
+<details>
+     <summary>Header.js</summary>
+
+```js
+export default function Header(props) {
+	return (
+		<header className="app-header">
+			<h1 className="header">{props.name}</h1>
+               <h2 class ="subheader">Better-Dressed People</h2>
+          </header>
+	);
+}
+
+```
+</details>
+
+<details>
+     <summary>Footer.js</summary>
+
+```js
+export default function Footer(props) {
+     return (
+          <footer>
+
+               <h6 class="copyWrite">&copy Valet, Industries, Inc</h6>
+
+          </footer>
+          )
+}
+```
+</details>
+
+<details>
+     <summary>Article.js</summary>
+
+```js
+export default function Article(props) {
+	return (
+
+<div class="box">
+    <h2 class="date">12/11/22</h2>
+    <h1 class="blogHeader">On the Street in Brooklyn</h1>
+    <a ><img alt="Girl in red" src="./images/blog-image-1.jpeg"></a>
+     <p class="post">I love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanity. love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanity. I love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanih how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how     love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis cum nisi nemo libero molestiae ab amet est minus maxime laudantium? Ab explicabo obcaecati hic animi iure voluptate distinctio suscipit laborum.</p>
+     <h5>Continue...</h5> 
+</div>
+
+)
+}
+
+```
+</details>
+
+<details>
+     <summary>App.js</summary>
+
+```js
+import React from 'react';
+import '../styles.css';
+//import card1
+import Header from './Header';
+import Nav from './Nav';
+import Article from './Article';
+import Footer from './Footer';
+
+import blogEntries from './data';
+// blogEntries = [{}, {img: '', title: '', text: '', url: ''}]
+console.log('this is blogEntries', blogEntries);
+
+export default function App(props) {
+	// LOOP OVER THE ARRAY OF DATA AND CREATE A CARD FOR EACH OBJECT
+	// ARRAY METHODS: .forEach, .filter, .reduce
+	// .map( (element, indexPos))
+	const cards = blogEntries.map((ele, index) => {
+		return (
+			<Card
+				// img={ele.img}
+				// title={ele.title}
+				// text={ele.text}
+				// url={ele.url}
+				{...ele}
+				key={index}
+			/>
+		);
+	});
+
+	var newCards = console.log('this is cards', cards);
+
+	return (
+		<div className="App">
+			<Header>Bootstrap Cards To Component Example</h1>
+			<section className="cards">
+				<Form />
+				{cards}
+			</section>
+		</div>
+	);
+}
+```
+</details>
+<details>
+     <summary>Data.js</summary>
+
+```js
+export default [
+	{
+		date: '11/20/2021',
+		blogHeader: 'On the Street in Brooklyn',
+		image: 'https://www.serebii.net/xy/pokemon/712.png',
+		post: 'I love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanity. love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanity. I love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanih how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis cum nisi nemo libero molestiae ab amet est minus maxime laudantium? Ab explicabo obcaecati hic animi iure voluptate distinctio suscipit laborum.'
+	},{
+		date: '11/11/202',
+		blogHeader: 'Vintage in Vogue',
+		image: 'https://www.serebii.net/xy/pokemon/712.png',
+		post: 'I love this vision of vintage. A few kids having som classy fun at the nightclub. Rather than a loud, big band, they opt for something a little more refined. I love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanity. love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanity. I love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanih how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how love how this red dress so unconsciously contrasts with the vibrant azure, in order to bring our eyes back to the sky. Despite this attempt to cancel the artificial, the girl is hollow; irreverent of the blue sky, only finding the smog of the filthy sidewalk. Vanith how.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis cum nisi nemo libero molestiae ab amet est minus maxime laudantium? Ab explicabo obcaecati hic animi iure voluptate distinctio suscipit laborum.'
+	
+	},{
+		date: 'Bergmite',
+		blogHeader: 'https://www.serebii.net/xy/pokemon/712.png',
+		image: 'VP',
+		post: '(207) 555-1234'
+	},{
+		date: 'Bergmite',
+		blogHeader: 'https://www.serebii.net/xy/pokemon/712.png',
+		image: 'VP',
+		post: '(207) 555-1234'
+	},{
+		date: 'Bergmite',
+		blogHeader: 'https://www.serebii.net/xy/pokemon/712.png',
+		image: 'VP',
+		post: '(207) 555-1234'
+	},{
+		date: 'Bergmite',
+		blogHeader: 'https://www.serebii.net/xy/pokemon/712.png',
+		image: 'VP',
+		post: '(207) 555-1234'
+	},{
+		date: 'Bergmite',
+		blogHeader: 'https://www.serebii.net/xy/pokemon/712.png',
+		image: 'VP',
+		post: '(207) 555-1234'
+	},{
+		date: 'Bergmite',
+		blogHeader: 'https://www.serebii.net/xy/pokemon/712.png',
+		image: 'VP',
+		post: '(207) 555-1234'
+	}
+]
+```
+</details>
+
+
+
